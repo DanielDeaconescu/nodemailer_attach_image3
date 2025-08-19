@@ -90,7 +90,7 @@ form.addEventListener("submit", async (e) => {
   // Validation
   const errors = validateForm(form);
   if (errors.length > 0) {
-    showSpinner(errors.join(", "), true);
+    showToast(errors.join(", "), true);
     showSpinner(false);
     return;
   }
