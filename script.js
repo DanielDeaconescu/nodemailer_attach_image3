@@ -74,8 +74,8 @@ const showSpinner = (show) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
+  showSpinner(true);
   const formData = new FormData(form);
-
   // Check if the Turnstile token exists
   const turnstileToken = document.querySelector(
     '[name="cf-turnstile-response"]'
