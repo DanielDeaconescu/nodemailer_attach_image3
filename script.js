@@ -61,6 +61,17 @@ const validateForm = (form) => {
 // Form submission
 const form = document.getElementById("formWithImage2");
 
+// Make sure we update the name of the file the user uploads
+const attachImageLabel = document.querySelector(".attach-image-label");
+
+attachImageLabel.addEventListener("change", () => {
+  const attachment = form.elements.attachment;
+  const attachImageName = document.querySelector(".attach-file-name");
+  if (attachment.files.length > 0) {
+    attachImageName.textContent = attachment.files[0].name;
+  }
+});
+
 // Spinner controller
 const showSpinner = (show) => {
   const spinner = document.querySelector(".spinner-border");
